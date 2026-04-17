@@ -57,4 +57,16 @@ You should use your lab note book to record what you have done. This will not be
 Submit your report and zip file containing your code by 16:00 on 30th April 2026. Use the link to the handin system on the ECS Intranet page for ELEC2301 (https://handin.ecs.soton.ac.uk/soton/2526/ELEC2301/5/).
 
 Mark Zwolinski
+
 3 March 2026
+
+## Specification of Design Under Verification
+The design to be verified is a parameterizable FIFO (First-In, First-Out buffer). The design is clocked by a single, positive clock edge. There is a synchronous, active low reset that initialises the pointers in the FIFO, but which does not initialise the contents of the FIFO buffer.
+
+The FIFO is parameterized in terms of its bit-width and depth. There are two thresholds that will assert outputs when the FIFO is almost full or almost empty. The FIFO has two active high control signals: write enable (we) and read enable (re) that allow data to be written into and read from the buffer. There is a write data (wrdata) input that holds new data to be written to the FIFO. Similarly, there is read data (rddata) output that returns data from the FIFO. Data should be read out in exactly the same sequence that it was written. The FIFO may be written to and read from in the same clock cycle.
+
+There are 4 status flags: full, empty, almost_full, and almost_empty. When full is high, data cannot be written to the FIFO. When empty is high, the data read from the FIFO is not defined.
+
+When the number of FIFO entries is less than the almost empty threshold, the almost_empty flag is high. When the number of entries is greater than the FIFO depth minus the almost high threshold, the almost_full flag is high.
+
+The addresses at which data is read or written are not visible outside the FIFO. Hence, the FIFO addresses should “wrap around” transparently.
