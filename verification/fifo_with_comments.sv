@@ -23,7 +23,7 @@ logic [POINTER_W-1:0] wptr;         // write pointer of the FIFO
 logic [POINTER_W-1:0] rptr;         // read pointer of the FIFO
 logic [POINTER_W-1:0] next_wptr;    // next write pointer
 logic [POINTER_W-1:0] next_rptr;    //next read pointer
-logic [POINTER_W-1:0] count;        // unkown yet
+logic [POINTER_W-1:0] count;        //number of elements in FIFO
       
 
 always_ff @(posedge clk) 
@@ -58,7 +58,7 @@ always_ff @(posedge clk)
          end
       end
    end
-
+ 
 always_comb
   begin
   if (count == DEPTH)   // logic for FULL flag
