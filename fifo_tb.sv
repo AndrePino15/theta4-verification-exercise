@@ -3,18 +3,18 @@ module fifo_tb;
 import fifo_pkg::*;
 logic clk, n_rst;
 
-fifo_if if (.*);
+fifo_if vif (.*);
 
 fifo #(.WIDTH(WIDTH), 
         .DEPTH(DEPTH), 
         .ALMOST_FULL_TH(ALMOST_FULL_TH), 
         .ALMOST_EMPTY_TH(ALMOST_EMPTY_TH),
-        .POINTER_W.(POINTER_W)) 
+        .POINTER_W(POINTER_W)) 
         f0 
-      (.clk(clk), .n_rst(n_rst), .we(if.we), .re(if.re),
-        .rddata(if.rddata), .wrdata(if.wrdata), 
-        .full(if.full), .empty(if.empty), 
-        .almost_full(if.almost_full), .almost_empty(almost_empty));
+      (.clk(clk), .n_rst(n_rst), .we(vif.we), .re(vif.re),
+        .rddata(vif.rddata), .wrdata(vif.wrdata), 
+        .full(vif.full), .empty(vif.empty), 
+        .almost_full(vif.almost_full), .almost_empty(vif.almost_empty));
 
 initial begin
 clk = '0;

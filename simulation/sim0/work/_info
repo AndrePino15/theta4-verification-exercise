@@ -9,29 +9,118 @@ z2
 !i10f 100
 cModel Technology
 dC:/MentorGraphics/modeltech64_2020.1/examples
+T_opt
+!s110 1776878304
+Vz0ZC?Qk5]DQ^5bOV<1CBJ2
+04 7 4 work fifo_tb fast 0
+=1-0050569d1df8-69e902df-218-9610
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2020.1;71
 vfifo
-DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1776877610
+Z0 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1776878135
 !i10b 1
 !s100 BC0Zcm2L182R2UF<18LSR1
-!s11b Dg1SIo80bB@j0V0VzS_@n1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I;nm1MTlS7o;L^h:QJISRd0
-VDg1SIo80bB@j0V0VzS_@n1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
-dH:/theta4-verification-exercise/simulation/sim0
+Z3 dH:/theta4-verification-exercise/simulation/sim0
 w1776876168
 8H:/theta4-verification-exercise/fifo.sv
 FH:/theta4-verification-exercise/fifo.sv
-!i122 1
+!i122 2
 L0 1 90
-OL;L;2020.1;71
+Z4 OL;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1776877610.000000
+!s108 1776878135.000000
 !s107 H:/theta4-verification-exercise/fifo.sv|
 !s90 -F=C:/MentorGraphics/modeltech64_2020.1/examples/vlog.opt|-F=|-reportprogress|300|-work|work|-vopt|-sv|-cover|sbc3|-stats=none|H:/theta4-verification-exercise/fifo.sv|
 !i113 0
-!s102 -cover sbc3
-o-work work -sv -cover sbc3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-tCoverage 7 CvgOpt 0
+Z5 !s102 -cover sbc3
+Z6 o-work work -sv -cover sbc3 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z7 tCoverage 7 CvgOpt 0
+Yfifo_if
+R0
+Z8 DXx4 work 8 fifo_pkg 0 22 zO_1ohAETnY112hFGgUko0
+!s110 1776878245
+!i10b 1
+!s100 <8ZbK@ZE^ed5L7WN4eRL:3
+R1
+I:QP=Qd9n4WgTh:9gdAaC@0
+R2
+S1
+R3
+w1776877661
+8H:/theta4-verification-exercise/fifo_if.sv
+FH:/theta4-verification-exercise/fifo_if.sv
+!i122 4
+Z9 L0 1 0
+R4
+r1
+!s85 0
+31
+!s108 1776878244.000000
+!s107 H:/theta4-verification-exercise/fifo_if.sv|
+!s90 -F=C:/MentorGraphics/modeltech64_2020.1/examples/vlog.opt|-F=|-reportprogress|300|-work|work|-vopt|-sv|-cover|sbc3|-stats=none|H:/theta4-verification-exercise/fifo_if.sv|
+!i113 0
+R5
+R6
+R7
+Xfifo_pkg
+R0
+!s110 1776878136
+!i10b 1
+!s100 cLAnKAObUA]=kfcH7]5;P2
+R1
+IzO_1ohAETnY112hFGgUko0
+VzO_1ohAETnY112hFGgUko0
+S1
+R3
+w1776878128
+8H:/theta4-verification-exercise/fifo_pkg.sv
+FH:/theta4-verification-exercise/fifo_pkg.sv
+!i122 3
+R9
+R4
+r1
+!s85 0
+31
+!s108 1776878136.000000
+!s107 H:/theta4-verification-exercise/fifo_pkg.sv|
+!s90 -F=C:/MentorGraphics/modeltech64_2020.1/examples/vlog.opt|-F=|-reportprogress|300|-work|work|-vopt|-sv|-cover|sbc3|-stats=none|H:/theta4-verification-exercise/fifo_pkg.sv|
+!i113 0
+R5
+R6
+R7
+vfifo_tb
+R0
+R8
+!s110 1776878287
+!i10b 1
+!s100 4_Z>i<Q^Z7U`7ZdiEdm9J2
+R1
+IC4GWQBWZ7<]@PQG_A^X6f2
+R2
+S1
+R3
+w1776878279
+8H:/theta4-verification-exercise/fifo_tb.sv
+FH:/theta4-verification-exercise/fifo_tb.sv
+!i122 5
+L0 1 27
+R4
+r1
+!s85 0
+31
+!s108 1776878287.000000
+!s107 H:/theta4-verification-exercise/fifo_tb.sv|
+!s90 -F=C:/MentorGraphics/modeltech64_2020.1/examples/vlog.opt|-F=|-reportprogress|300|-work|work|-vopt|-sv|-cover|sbc3|-stats=none|H:/theta4-verification-exercise/fifo_tb.sv|
+!i113 0
+R5
+R6
+R7
