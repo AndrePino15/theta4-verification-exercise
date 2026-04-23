@@ -1,5 +1,8 @@
 `ifndef MONITOR_C
 `define MONITOR_C
+
+import fifo_pkg::*;
+
 class monitor;
     virtual fifo_if vif;
     event monitor_done;
