@@ -14,7 +14,12 @@ class fifo_trans;
     logic [WIDTH-1:0] rddata;
     // Extra fields to provide more information: TIME and TRANSACTION TYPE
     test_type type;
-    logic int [15:0] time; 
+
+    function 
+    void print(string tag="");
+        $display ("T=%0t [%s] we=%d re=%d wrdata=0x%0h", $time, tag, we, re, wrdata);
+
+    endfunction
 
 endclass //fifo_trans
 `endif
