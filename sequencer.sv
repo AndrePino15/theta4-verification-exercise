@@ -1,6 +1,8 @@
 `ifndef SEQUENCER_C
 `define SEQUENCER_C
 
+import fifo_pkg::*;
+
 class sequencer;
     event drive_done;
     mailbox #(fifo_trans) drv_mailbox;

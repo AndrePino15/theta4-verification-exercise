@@ -13,7 +13,7 @@ class fifo_trans;
     logic [WIDTH-1:0] wrdata;
     logic [WIDTH-1:0] rddata;
     // Extra fields to provide more information: TIME and TRANSACTION TYPE
-    test_type type;
+    test_type test_type;
 
     function 
     void print(string tag="");
