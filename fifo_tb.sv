@@ -2,7 +2,9 @@ module fifo_tb;
 
 import fifo_pkg::*;
 import tb_pkg::*;
+
 logic clk, n_rst;
+env env0;
 
 fifo_if vif (.*);
 
@@ -22,7 +24,12 @@ clk = '0;
 n_rst = '0;
 #20 n_rst = '1;
 forever #10 clk = ~clk;
+end
 
+initial begin
+  env0 = new(vif);
+
+  #200ns $finish;
 end
 
 endmodule
