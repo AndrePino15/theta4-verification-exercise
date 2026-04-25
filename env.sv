@@ -13,6 +13,10 @@ class env;
     mailbox #(fifo_trans) drv_mailbox;
 
     function new(virtual fifo_if vif);
+        // creating the mailboxes
+        score_mailbox = new();
+        drv_mailbox = new();
+        // creating the actual class modules of the testbench
         s0 = new(drv_mailbox, drive_done);
         d0 = new(vif, drv_mailbox, drive_done);
         m0 = new(vif, score_mailbox, monitor_done);

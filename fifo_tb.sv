@@ -19,15 +19,22 @@ fifo #(.WIDTH(WIDTH),
         .full(vif.full), .empty(vif.empty), 
         .almost_full(vif.almost_full), .almost_empty(vif.almost_empty));
 
+// code for the starting the clock signal
 initial begin
 clk = '0;
+forever #10 clk = ~clk;
+end
+
+// code for performing the initial reset of teh system
+initial begin
 n_rst = '0;
 #20 n_rst = '1;
-forever #10 clk = ~clk;
 end
 
 initial begin
   env0 = new(vif);
+  $display("T=%0d [Testbench] Starting the simulation environment...", $time);
+  env0.run();
 
   #200ns $finish;
 end

@@ -11,19 +11,25 @@ class sequencer;
     endfunction
 
     task test0;
-        fifo_trans item = new();
-        // values to write to the FIFO
-        item.we = 1;
-        item.re = 1;
-        item.wrdata = 32'hDEADBEEF;
-        item.trans_type = READ_WRITE_TEST;
-        // expected outputs of the FIFO
-        item.rddata = 32'hDEADBEEF;
-        item.almost_empty = '1;
-        item.full = '0;
-        item.almost_full = '1;
-        item.empty = '0;
+        fifo_trans item;
 
+        // values to write to the FIFO
+        item  = new();
+        item.we = 1;
+        item.re = 0;
+        item.wrdata = 4'hA;
+        item.trans_type = READ_WRITE_TEST;
+        $display ("T=%0t [Sequencer] Sending WRITE item to driver mailbox.", $time);
+        drv_mailbox.put(item);
+        // wait for item to be consumed by driver
+        @(drive_done);
+
+        // prepare item for read operation
+        item = new();
+        item.we = 0;
+        item.re = 1;
+        item.wrdata = '0;
+        item.trans_type = READ_WRITE_TEST;
         $display ("T=%0t [Sequencer] Sending new item to driver mailbox.", $time);
         drv_mailbox.put(item);
         @(drive_done);
