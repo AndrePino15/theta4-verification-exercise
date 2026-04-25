@@ -26,7 +26,7 @@ class monitor;
             item.almost_full = vif.almost_full;
             item.full = vif.full;
 
-            item.print("Monitor");
+            item.print_rd("Monitor");
             score_mailbox.put(item);
             -> monitor_done;
         end

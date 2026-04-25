@@ -6,18 +6,45 @@ Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 Top level modules:
 	--none--
 
-} {} {}} H:/theta4-verification-exercise/sequencer.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/sequencer.sv
+} {} {}} H:/theta4-verification-exercise/tb_pkg.sv {1 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/tb_pkg.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-** Error: H:/theta4-verification-exercise/sequencer.sv(6): (vlog-2730) Undefined variable: 'fifo_trans'.
-** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(14): near "=": syntax error, unexpected '=', expecting '('.
-** Error: H:/theta4-verification-exercise/sequencer.sv(19): (vlog-2730) Undefined variable: 'READ_WRITE_TEST'.
+-- Compiling package tb_pkg
+-- Importing package fifo_pkg
 
-} {3.0 6.0} {}} H:/theta4-verification-exercise/fifo_trans.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/fifo_trans.sv
+Top level modules:
+	--none--
+
+} {} {}} H:/theta4-verification-exercise/fifo_trans.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/fifo_trans.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 ** Error: H:/theta4-verification-exercise/fifo_trans.sv(12): (vlog-2730) Undefined variable: 'WIDTH'.
 ** Error: H:/theta4-verification-exercise/fifo_trans.sv(15): Invalid type 'test_type'. Please check the type of the variable 'trans_type'.
 
-} {3.0 5.0} {}} H:/theta4-verification-exercise/scoreboard.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/scoreboard.sv
+} {3.0 5.0} {}} H:/theta4-verification-exercise/sequencer.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/sequencer.sv
+Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+** Error: H:/theta4-verification-exercise/sequencer.sv(6): (vlog-2730) Undefined variable: 'fifo_trans'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(14): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/sequencer.sv(17): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(21): (vlog-2730) Undefined variable: 'READ_WRITE_TEST'.
+
+} {3.0 7.0} {}} H:/theta4-verification-exercise/fifo.sv {1 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/fifo.sv
+Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+-- Compiling module fifo
+
+Top level modules:
+	fifo
+
+} {} {}} H:/theta4-verification-exercise/driver.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/driver.sv
+Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+** Error: H:/theta4-verification-exercise/driver.sv(7): (vlog-2730) Undefined variable: 'fifo_trans'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/driver.sv(20): near ";": syntax error, unexpected ';', expecting '('.
+
+} {3.0 5.0} {}} H:/theta4-verification-exercise/monitor.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/monitor.sv
+Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+** Error: H:/theta4-verification-exercise/monitor.sv(7): (vlog-2730) Undefined variable: 'fifo_trans'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/monitor.sv(16): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/monitor.sv(19): (vlog-2730) Undefined variable: 'item'.
+
+} {3.0 6.0} {}} H:/theta4-verification-exercise/scoreboard.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/scoreboard.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 ** Error: H:/theta4-verification-exercise/scoreboard.sv(6): (vlog-2730) Undefined variable: 'fifo_trans'.
 ** Error: H:/theta4-verification-exercise/scoreboard.sv(9): (vlog-2730) Undefined variable: 'WIDTH'.
@@ -27,45 +54,23 @@ Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 ** Error: H:/theta4-verification-exercise/scoreboard.sv(52): (vlog-2730) Undefined variable: 'ALMOST_EMPTY_TH'.
 ** Error: H:/theta4-verification-exercise/scoreboard.sv(53): (vlog-2730) Undefined variable: 'ALMOST_FULL_TH'.
 
-} {3.0 10.0} {}} H:/theta4-verification-exercise/monitor.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/monitor.sv
-Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-** Error: H:/theta4-verification-exercise/monitor.sv(7): (vlog-2730) Undefined variable: 'fifo_trans'.
-** Error: (vlog-13069) H:/theta4-verification-exercise/monitor.sv(16): near ";": syntax error, unexpected ';', expecting '('.
-** Error: H:/theta4-verification-exercise/monitor.sv(19): (vlog-2730) Undefined variable: 'item'.
-
-} {3.0 6.0} {}} H:/theta4-verification-exercise/driver.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/driver.sv
-Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-** Error: H:/theta4-verification-exercise/driver.sv(7): (vlog-2730) Undefined variable: 'fifo_trans'.
-** Error: (vlog-13069) H:/theta4-verification-exercise/driver.sv(20): near ";": syntax error, unexpected ';', expecting '('.
-
-} {3.0 5.0} {}} H:/theta4-verification-exercise/fifo.sv {1 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/fifo.sv
-Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
--- Compiling module fifo
-
-Top level modules:
-	fifo
-
-} {} {}} H:/theta4-verification-exercise/fifo_tb.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/fifo_tb.sv
-Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
--- Compiling module fifo_tb
--- Importing package fifo_pkg
--- Importing package tb_pkg
-** Error: H:/theta4-verification-exercise/fifo_tb.sv(30): (vlog-2152) <type> = new syntax only allowed with embedded covergroups in classes
-
-} {6.0 7.0} {}} H:/theta4-verification-exercise/env.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/env.sv
-Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-** Error: H:/theta4-verification-exercise/env.sv(5): Invalid type 'sequencer'. Please check the type of the variable 's0'.
-** Error: H:/theta4-verification-exercise/env.sv(6): Invalid type 'driver'. Please check the type of the variable 'd0'.
-** Error: H:/theta4-verification-exercise/env.sv(7): Invalid type 'monitor'. Please check the type of the variable 'm0'.
-** Error: H:/theta4-verification-exercise/env.sv(8): Invalid type 'scoreboard'. Please check the type of the variable 'sc0'.
-** Error: H:/theta4-verification-exercise/env.sv(12): (vlog-2730) Undefined variable: 'fifo_trans'.
-** Error: H:/theta4-verification-exercise/env.sv(15): (vlog-2400) Identifier ('fifo_if') found where a type or type identifier is required.
-
-} {3.0 9.0} {}} H:/theta4-verification-exercise/fifo_pkg.sv {1 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/fifo_pkg.sv
+} {3.0 10.0} {}} H:/theta4-verification-exercise/fifo_pkg.sv {1 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/fifo_pkg.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 -- Compiling package fifo_pkg
 
 Top level modules:
 	--none--
 
-} {} {}}
+} {} {}} H:/theta4-verification-exercise/env.sv {0 {vlog -work work -vopt -sv -cover sbc3 -stats=none H:/theta4-verification-exercise/env.sv
+Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+** Error: H:/theta4-verification-exercise/env.sv(5): Invalid type 'sequencer'. Please check the type of the variable 's0'.
+** Error: H:/theta4-verification-exercise/env.sv(6): Invalid type 'driver'. Please check the type of the variable 'd0'.
+** Error: H:/theta4-verification-exercise/env.sv(7): Invalid type 'monitor'. Please check the type of the variable 'm0'.
+** Error: H:/theta4-verification-exercise/env.sv(8): Invalid type 'scoreboard'. Please check the type of the variable 'sc0'.
+** Error: H:/theta4-verification-exercise/env.sv(12): (vlog-2730) Undefined variable: 'fifo_trans'.
+** Error: H:/theta4-verification-exercise/env.sv(20): (vlog-2730) Undefined variable: 's0'.
+** Error: H:/theta4-verification-exercise/env.sv(21): (vlog-2730) Undefined variable: 'd0'.
+** Error: H:/theta4-verification-exercise/env.sv(22): (vlog-2730) Undefined variable: 'm0'.
+** Error: H:/theta4-verification-exercise/env.sv(23): (vlog-2730) Undefined variable: 'sc0'.
+
+} {3.0 12.0} {}}

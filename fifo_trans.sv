@@ -15,9 +15,13 @@ class fifo_trans;
     test_type trans_type;
 
     function 
-    void print(string tag="");
-        $display ("T=%0t [%s] we=%d re=%d wrdata=0x%0h", $time, tag, we, re, wrdata);
+    void print_wr(string tag="");
+        $display ("T=%0t [%s] Received mailbox item: we=%d re=%d wrdata=0x%0h", $time, tag, we, re, wrdata);
+    endfunction
 
+    function 
+    void print_rd(string tag="");
+        $display ("T=%0t [%s] Received mailbox item: we=%d re=%d rddata=0x%0h", $time, tag, we, re, rddata);
     endfunction
 
 endclass //fifo_trans

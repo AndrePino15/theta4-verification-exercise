@@ -19,7 +19,7 @@ class driver;
         forever begin
             fifo_trans item;
             drv_mailbox.get(item);
-            item.print("Driver");
+            item.print_wr("Driver");
 
             // update interface with new test values from the mailbox in the middle of the clock
             @(negedge vif.clk);

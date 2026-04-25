@@ -36,7 +36,9 @@ initial begin
   $display("T=%0d [Testbench] Starting the simulation environment...", $time);
   env0.run();
 
+  sc0.report();
   #200ns $finish;
+
 end
 
 endmodule

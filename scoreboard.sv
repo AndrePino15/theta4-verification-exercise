@@ -28,7 +28,7 @@ class scoreboard;
         // wait for monitor to update mailbox with new results
         @(monitor_done);
         score_mailbox.get(item);
-        item.print("Scoreboard");
+        item.print_rd("Scoreboard");
 
         // 1)   Update reference FIFO with read and write operations  
         if (item.we && (ref_buffer.size() < DEPTH))
