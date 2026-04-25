@@ -1,8 +1,6 @@
 `ifndef SCOREBOARD_C
 `define SCOREBOARD_C
 
-import fifo_pkg::*;
-
 class scoreboard;
     event monitor_done;
     mailbox #(fifo_trans) score_mailbox;

@@ -1,7 +1,6 @@
 `ifndef FIFO_TRANS_C
 `define FIFO_TRANS_C
 /* This class contains the transaction item object format to use in the mailboxes */
-import fifo_pkg::*;
 
 class fifo_trans;
     logic we;
@@ -13,7 +12,7 @@ class fifo_trans;
     logic [WIDTH-1:0] wrdata;
     logic [WIDTH-1:0] rddata;
     // Extra fields to provide more information: TIME and TRANSACTION TYPE
-    test_type test_type;
+    test_type trans_type;
 
     function 
     void print(string tag="");

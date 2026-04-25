@@ -15,11 +15,4 @@ package fifo_pkg;
         STIMULUS_TEST,
         FLAG_TEST
     } test_type;
-
-    `include "fifo_trans.sv"
-    `include "driver.sv"
-    `include "sequencer.sv"
-    `include "monitor.sv"
-    `include "scoreboard.sv"
-    `include "env.sv"
 endpackage

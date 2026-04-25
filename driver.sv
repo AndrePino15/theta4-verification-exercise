@@ -1,6 +1,5 @@
 `ifndef DRIVER_C
 `define DRIVER_C
-import fifo_pkg::*;
 
 class driver;
     virtual fifo_if vif;

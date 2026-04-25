@@ -1,8 +1,6 @@
 `ifndef SEQUENCER_C
 `define SEQUENCER_C
 
-import fifo_pkg::*;
-
 class sequencer;
     event drive_done;
     mailbox #(fifo_trans) drv_mailbox;
@@ -18,7 +16,7 @@ class sequencer;
         item.we = 1;
         item.re = 1;
         item.wrdata = 32'hDEADBEEF;
-        item.type = READ_WRITE_TEST;
+        item.trans_type = READ_WRITE_TEST;
         // expected outputs of the FIFO
         item.rddata = 32'hDEADBEEF;
         item.almost_empty = '1;

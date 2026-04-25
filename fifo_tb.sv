@@ -1,6 +1,7 @@
 module fifo_tb;
 
 import fifo_pkg::*;
+import tb_pkg::*;
 logic clk, n_rst;
 
 fifo_if vif (.*);
