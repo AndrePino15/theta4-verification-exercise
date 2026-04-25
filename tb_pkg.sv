@@ -4,6 +4,7 @@ package tb_pkg;
     `include "fifo_trans.sv"
     `include "driver.sv"
     `include "sequencer.sv"
+    `include "monitor.sv"
     `include "scoreboard.sv"
     `include "env.sv"
 endpackage
