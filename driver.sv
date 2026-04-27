@@ -26,6 +26,12 @@ class driver;
             vif.we = item.we;
             vif.re = item.re;
             vif.wrdata = item.wrdata;
+            // check for reset event
+            if (item.trans_type == N_RESET_LOW)
+                vif.n_rst = 0;
+            else (item.trans_type == N_RESET_HIGH)
+                vif.n_rst = 1;
+                
             // waiting for the next clock edge for the values to be written
             @(posedge vif.clk);
             -> drive_done;

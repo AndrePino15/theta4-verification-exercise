@@ -12,16 +12,72 @@ class scoreboard;
     logic ref_full;
     logic ref_empty;
     // pass/fails count variables for final scoreboard report
-    int pass_count, fail_count;
+    int pass_count, fail_count, tests_passed, tests_failed;
+
+    covergroup fifo_cg;
+        // definition of coverpoints for all variables in the transaction type
+        // Enable variables
+        cp_we: coverpoint item.we {
+            bins enabled = {1};
+            bins disabled = {0};
+        }
+        cp_re: coverpoint item.re {
+            bins enabled = {1};
+            bins disabled = {0};
+        }
+        // Data variables
+        cp_wdata: coverpoint item.wrdata {
+            bins zero = {0};
+            bins low  = {[1:WIDTH/2]};
+            bins high = {[8:WIDTH-1]};
+        }
+        cp_rddata: coverpoint item.rddata {
+            bins zero = {0};
+            bins low  = {[1:WIDTH/2]};
+            bins high = {[8:WIDTH-1]};
+        }
+        // Flag variables
+        cp_empty: coverpoint item.empty {
+            bins set = {1};
+            bins not_set = {0};
+        }
+        cp_almost_empty: coverpoint item.almost_empty {
+            bins set = {1};
+            bins not_set = {0};
+        }
+        cp_almost_full: coverpoint item.almost_full {
+            bins set = {1};
+            bins not_set = {0};
+        }
+        cp_full: coverpoint item.full {
+            bins set = {1};
+            bins not_set = {0};
+        }
+
+        // cross cover case definitions: Trying to get as many corner cases as possible
+        // First cross cover: checking for cases when we try tor ead when its empty or write to a full FIFO
+        cx_we_full:         cross cp_we, cp_full;
+        cx_we_almost_full:  cross cp_we, cp_almost_full;
+        cx_re_empty:        cross cp_re, cp_empty;
+        cx_re_almost_empty: cross cp_re, cp_almost_empty;
+        // test for same cycle read and write test
+        cx_same_cycle_wr:   cross cp_we, cp_re;
+    endgroup
+
+    // Create handle for covergroup
+    fifo_cg cg;
 
     function new( mailbox #(fifo_trans) score_mailbox, event monitor_done);
         this.score_mailbox = score_mailbox;
         this.monitor_done = monitor_done;
+        this.cg = new();    // instantiate covergroup in constructor so that we never forget to initalise it
     endfunction
 
     task run();
     fail_count = 0;
     pass_count = 0;
+    tests_passed = 0;
+    tests_failed = 0;
     forever begin
         fifo_trans item;
         logic [WIDTH-1:0] ref_data;
@@ -29,9 +85,23 @@ class scoreboard;
         score_mailbox.get(item);
         item.print_rd("Scoreboard");
 
+        if (item.trans_type == N_RESET_LOW) begin
+            ref_buffer.delete();
+            $display("T=%0t [Scoreboard] Reset detected, clearing reference buffer", $time);
+            continue;   // skip the rest of the test as in reset there is no need to check, only after it goes back up to 1.
+        end
+
+        // 0)   Sample covergroup after each transaction with the monitor is complete and has new values from the DUT
+        cg.sample();
+
         // 1)   Update reference FIFO with read and write operations  
-        if (item.we && (ref_buffer.size() < DEPTH))
+        if (item.we && (ref_buffer.size() < DEPTH)) begin
             ref_buffer.push_back(item.wrdata);
+            $display("T=%0t [Scoreboard] Data written to reference FIFO. ref=0x%0h", $time, item.wrdata);
+        end
+        else if (item.we && (ref_buffer.size() == DEPTH)) begin
+            $display("T=%0t [Scoreboard] Ref FIFO is full, can't hold more data.", $time);
+        end
         
         if (item.re && (ref_buffer.size() > 0)) begin
             ref_data = ref_buffer.pop_front();
@@ -43,6 +113,9 @@ class scoreboard;
                 $display("T=%0t [Scoreboard] Fail... Incorrect data read from FIFO. ref=0x%0h, rddata=0x%0h", $time, ref_data, item.rddata);
                 fail_count++;
             end
+        end
+        else if (item.re && (ref_buffer.size() == 0)) begin
+            $display("T=%0t [Scoreboard] Read attempted when FIFO is empty: rddata=0x%0h (undefined behaviour, value doesn't matter)", $time, item.rddata);
         end
 
         // 2)   Compute flags
@@ -100,6 +173,28 @@ class scoreboard;
         else
             $display("FAILURES DETECTED");
         $display("================================");
+
+        if (fail_count > 0)
+            tests_failed = tests_failed+1;
+        else
+            tests_passed = tests_passed+1:
+        // reset the values for pass_count and fail_count
+        pass_count = '0;
+        fail_count = '0;
+    endtask
+
+    task final_report();
+        $display("===================================");
+        $display("===== SCOREBOARD FINAL REPORT =====");
+        $display("TOTAL TESTS PASSED: %0d", tests_passed);
+        $display("TOTAL TESTS FAILED: %0d", tests_failed);
+        if (tests_failed == 0)
+            $display("ALL TESTS PASSED");
+            $display("DUT is verified and working as expected according to the specification.");
+        else
+            $display("FAILURES DETECTED");
+            $display("The DUT design contains errors that need fixing for correct behaviour.");
+        $display("===================================");
     endtask
     
 endclass //scoreboard
