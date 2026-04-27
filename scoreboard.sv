@@ -177,7 +177,7 @@ class scoreboard;
         if (fail_count > 0)
             tests_failed = tests_failed+1;
         else
-            tests_passed = tests_passed+1:
+            tests_passed = tests_passed+1;
         // reset the values for pass_count and fail_count
         pass_count = '0;
         fail_count = '0;
@@ -188,13 +188,16 @@ class scoreboard;
         $display("===== SCOREBOARD FINAL REPORT =====");
         $display("TOTAL TESTS PASSED: %0d", tests_passed);
         $display("TOTAL TESTS FAILED: %0d", tests_failed);
-        if (tests_failed == 0)
+        if (tests_failed == 0) begin
             $display("ALL TESTS PASSED");
             $display("DUT is verified and working as expected according to the specification.");
-        else
+        end
+        else begin
             $display("FAILURES DETECTED");
             $display("The DUT design contains errors that need fixing for correct behaviour.");
+        end
         $display("===================================");
+        
     endtask
     
 endclass //scoreboard
