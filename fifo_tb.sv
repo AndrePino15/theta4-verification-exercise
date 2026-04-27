@@ -36,11 +36,8 @@ initial begin
   env0 = new(vif);
   $display("T=%0d [Testbench] Starting the simulation environment...", $time);
   env0.run();
-  #200ns;
 
-  // 3) Get the final report from the Scoreboard and finish simulation
-  env0.report();
-  #10ns;
+  // 3) Finish simulation
   $finish;
 end
 

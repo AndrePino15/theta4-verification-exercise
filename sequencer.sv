@@ -2,12 +2,13 @@
 `define SEQUENCER_C
 
 class sequencer;
-    event drive_done;
+    event drive_done, sequencer_done;
     mailbox #(fifo_trans) drv_mailbox;
 
-    function new(mailbox #(fifo_trans) drv_mailbox, event drive_done);
+    function new(mailbox #(fifo_trans) drv_mailbox, event drive_done, event sequencer_done);
         this.drv_mailbox = drv_mailbox;
         this.drive_done = drive_done;
+        this.sequencer_done = sequencer_done;
     endfunction
 
     task test0;
@@ -51,6 +52,9 @@ class sequencer;
         $display ("T=%0t [Sequencer] Sending new item to driver mailbox.", $time);
         drv_mailbox.put(item);
         @(drive_done);
+
+        // sequencer finished, so set finsished flag
+        -> sequencer_done;
     endtask
 endclass //generator
 
