@@ -39,7 +39,8 @@ initial begin
   #200ns;
 
   // 3) Get the final report from the Scoreboard and finish simulation
-  sc0.report();
+  env0.report();
+  #10ns;
   $finish;
 end
 
