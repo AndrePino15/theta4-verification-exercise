@@ -31,6 +31,10 @@ class env;
             sc0.run();
         join_any
     endtask //run
+
+    task report();
+        sc0.report();
+    endtask
 endclass //env
 
 `endif
