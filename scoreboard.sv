@@ -26,7 +26,6 @@ class scoreboard;
         fifo_trans item;
         logic [WIDTH-1:0] ref_data;
         // wait for monitor to update mailbox with new results
-        @(monitor_done);
         score_mailbox.get(item);
         item.print_rd("Scoreboard");
 

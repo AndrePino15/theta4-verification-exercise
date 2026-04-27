@@ -8,11 +8,10 @@ package fifo_pkg;
 
    // enum that defines the different types of transaction/test being performed 
     typedef enum logic [3:0]{
-        RESET_TEST,
         READ_WRITE_TEST,
-        OVERFLOW_TEST,
-        UNDERFLOW_TEST,
-        STIMULUS_TEST,
-        FLAG_TEST
+        RESET_TEST,
+        FULL_READ_WRITE,
+        WRAP_AROUND_TEST,
+        SAME_CYCLE_RW_TEST
     } test_type;
 endpackage

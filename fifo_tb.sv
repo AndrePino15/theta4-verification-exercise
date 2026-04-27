@@ -38,7 +38,8 @@ initial begin
   env0.run();
 
   // 3) Finish simulation
-  $finish;
+  $display("T=%0t Simulation finished.", $time);
+  $stop;
 end
 
 endmodule

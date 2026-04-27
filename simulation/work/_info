@@ -8,133 +8,155 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/MentorGraphics/modeltech64_2020.1/examples
+Z0 dC:/MentorGraphics/modeltech64_2020.1/examples
 T_opt
-!s11d tb_pkg H:/theta4-verification-exercise/simulation/work 1 fifo_if 1 H:/theta4-verification-exercise/simulation/work 
+Z1 !s11d tb_pkg H:/theta4-verification-exercise/simulation/work 1 fifo_if 1 H:/theta4-verification-exercise/simulation/work 
 !s110 1777278312
 V13F10EP5jJVLNfG`8ZlF40
-04 7 4 work fifo_tb fast 0
+Z2 04 7 4 work fifo_tb fast 0
 =1-0050569d1ea4-69ef1d67-2b3-d51c
-o-quiet -auto_acc_if_foreign -work work
-Z0 tCvgOpt 0
+Z3 o-quiet -auto_acc_if_foreign -work work
+Z4 tCvgOpt 0
 n@_opt
-OL;O;2020.1;71
+Z5 OL;O;2020.1;71
+R0
+T_opt1
+R1
+!s110 1777299633
+V1iQES`lc:TdSW;nkn32IA0
+R2
+=1-0050569d1ea4-69ef70b0-314-4534
+R3
+R4
+n@_opt1
+R5
+T_opt2
+R1
+!s110 1777286872
+VBZbcbZGe^8WoU8CM?0oFm2
+R2
+=1-0050569d1ea4-69ef3ed8-5d-7d84
+o-quiet -auto_acc_if_foreign -work work +acc
+R4
+n@_opt2
+R5
+R0
 vfifo
-Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1777278291
+Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1777299627
 !i10b 1
 !s100 BC0Zcm2L182R2UF<18LSR1
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z7 !s11b Dg1SIo80bB@j0V0VzS_@n1
 Ia[iKniIjgog9JWDY1za;Z3
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z8 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z4 dH:/theta4-verification-exercise/simulation
-w1776876168
+Z9 dH:/theta4-verification-exercise/simulation
+Z10 w1777286143
 8H:/theta4-verification-exercise/fifo.sv
 FH:/theta4-verification-exercise/fifo.sv
-!i122 4
+!i122 84
 L0 1 90
-Z5 OL;L;2020.1;71
+Z11 OL;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1777278291.000000
+Z12 !s108 1777299626.000000
 !s107 H:/theta4-verification-exercise/fifo.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|H:/theta4-verification-exercise/fifo.sv|
 !i113 0
-Z6 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R0
+Z13 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
 Yfifo_if
-R1
-Z7 DXx4 work 8 fifo_pkg 0 22 gOfdFIKFZ051H9dof1hWn0
-Z8 !s110 1777278288
+R6
+Z14 DXx4 work 8 fifo_pkg 0 22 gOfdFIKFZ051H9dof1hWn0
+Z15 !s110 1777299623
 !i10b 1
 !s100 <8ZbK@ZE^ed5L7WN4eRL:3
-R2
+R7
 IDL^IjM9GK2b5PdV0ab1b93
-R3
+R8
 S1
-R4
-w1777135296
+R9
+R10
 8H:/theta4-verification-exercise/fifo_if.sv
 FH:/theta4-verification-exercise/fifo_if.sv
-!i122 1
-Z9 L0 1 0
-R5
+!i122 81
+Z16 L0 1 0
+R11
 r1
 !s85 0
 31
-Z10 !s108 1777278288.000000
+Z17 !s108 1777299623.000000
 !s107 H:/theta4-verification-exercise/fifo_if.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|H:/theta4-verification-exercise/fifo_if.sv|
 !i113 0
-R6
-R0
+R13
+R4
 Xfifo_pkg
-R1
-R8
+R6
+R15
 !i10b 1
 !s100 cLAnKAObUA]=kfcH7]5;P2
-R2
+R7
 IgOfdFIKFZ051H9dof1hWn0
 VgOfdFIKFZ051H9dof1hWn0
 S1
-R4
-w1777111717
+R9
+R10
 8H:/theta4-verification-exercise/fifo_pkg.sv
 FH:/theta4-verification-exercise/fifo_pkg.sv
-!i122 0
-R9
-R5
+!i122 80
+R16
+R11
 r1
 !s85 0
 31
-!s108 1777278287.000000
+R17
 !s107 H:/theta4-verification-exercise/fifo_pkg.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|H:/theta4-verification-exercise/fifo_pkg.sv|
 !i113 0
-R6
-R0
-vfifo_tb
-R1
-R7
-DXx4 work 6 tb_pkg 0 22 ?WzF2Ieo0ie4N8b[eH21L3
-!s110 1777278290
-!i10b 1
-!s100 >eQ0DVlSzA@m<hLUgRhlU2
-R2
-IM8KifBS]``Qg@?o;Xe4d73
-R3
-S1
+R13
 R4
-w1777277688
+vfifo_tb
+R6
+R14
+DXx4 work 6 tb_pkg 0 22 g>1;_>baef85m?WeEX8eT2
+!s110 1777299626
+!i10b 1
+!s100 EBT@bJ?kz:2BN>GHg2I]S0
+R7
+I0LMHBcFW]MQUQbcfAn^ME0
+R8
+S1
+R9
+w1777299324
 8H:/theta4-verification-exercise/fifo_tb.sv
 FH:/theta4-verification-exercise/fifo_tb.sv
-!i122 3
-L0 1 46
-R5
+!i122 83
+L0 1 45
+R11
 r1
 !s85 0
 31
-!s108 1777278290.000000
+R12
 !s107 H:/theta4-verification-exercise/fifo_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|H:/theta4-verification-exercise/fifo_tb.sv|
 !i113 0
-R6
-R0
+R13
+R4
 Xtb_pkg
 !s115 fifo_if
-R1
-R7
-R8
+R6
+R14
+!s110 1777299624
 !i10b 1
-!s100 GI?gB6EmZh8O1@ME`o2Hh0
-R2
-I?WzF2Ieo0ie4N8b[eH21L3
-V?WzF2Ieo0ie4N8b[eH21L3
+!s100 g?NmWBGLWWgTLY^kEY2II2
+R7
+Ig>1;_>baef85m?WeEX8eT2
+Vg>1;_>baef85m?WeEX8eT2
 S1
-R4
-w1777134872
+R9
+w1777299617
 8H:/theta4-verification-exercise/tb_pkg.sv
 FH:/theta4-verification-exercise/tb_pkg.sv
 FH:\theta4-verification-exercise\fifo_trans.sv
@@ -143,15 +165,15 @@ FH:\theta4-verification-exercise\sequencer.sv
 FH:\theta4-verification-exercise\monitor.sv
 FH:\theta4-verification-exercise\scoreboard.sv
 FH:\theta4-verification-exercise\env.sv
-!i122 2
-R9
-R5
+!i122 82
+R16
+R11
 r1
 !s85 0
 31
-R10
+R17
 !s107 H:\theta4-verification-exercise\env.sv|H:\theta4-verification-exercise\scoreboard.sv|H:\theta4-verification-exercise\monitor.sv|H:\theta4-verification-exercise\sequencer.sv|H:\theta4-verification-exercise\driver.sv|H:\theta4-verification-exercise\fifo_trans.sv|H:/theta4-verification-exercise/tb_pkg.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|H:/theta4-verification-exercise/tb_pkg.sv|
 !i113 0
-R6
-R0
+R13
+R4

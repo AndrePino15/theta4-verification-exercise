@@ -21,6 +21,7 @@ class env;
         d0 = new(vif, drv_mailbox, drive_done);
         m0 = new(vif, score_mailbox, monitor_done);
         sc0 = new(score_mailbox, monitor_done);
+        this.vif = vif;
     endfunction //new()
 
     task run();
@@ -31,7 +32,10 @@ class env;
             sc0.run();
         join_none
         // wait for sequencer done trigger
-        @(sequencer_done)
+        @(sequencer_done);
+        $display("T=%0t [Env] Sequencer Done flag trigger received!", $time);
+        vif.we = '0;
+        vif.re = '0;
         repeat (2) @(posedge vif.clk);
         // Get final report from the scoreboard
         sc0.report();

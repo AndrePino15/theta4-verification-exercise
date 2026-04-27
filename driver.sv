@@ -29,6 +29,7 @@ class driver;
             // waiting for the next clock edge for the values to be written
             @(posedge vif.clk);
             -> drive_done;
+            $display("T=%0t [Driver] Driver_done flag triggered", $time);
         end
     endtask
 
