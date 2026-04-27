@@ -16,6 +16,7 @@ class monitor;
         fifo_trans item;
         forever begin
             @(posedge vif.clk)
+            #5ns;   // added delay to sample outputs only after they settle post clock edge
             item = new();
             item.we = vif.we;
             item.re = vif.re;

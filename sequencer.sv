@@ -28,7 +28,6 @@ class sequencer;
         item = new();
         item.we = 0;
         item.re = 1;
-        item.wrdata = '0;
         item.trans_type = READ_WRITE_TEST;
         $display ("T=%0t [Sequencer] Sending new item to driver mailbox.", $time);
         drv_mailbox.put(item);
