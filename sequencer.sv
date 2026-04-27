@@ -32,6 +32,25 @@ class sequencer;
         $display ("T=%0t [Sequencer] Sending new item to driver mailbox.", $time);
         drv_mailbox.put(item);
         @(drive_done);
+
+        // prepare next item for write operation
+        item = new();
+        item.we = 1;
+        item.re = 0;
+        item.wrdata = 4'hB;
+        item.trans_type = READ_WRITE_TEST;
+        $display ("T=%0t [Sequencer] Sending new item to driver mailbox.", $time);
+        drv_mailbox.put(item);
+        @(drive_done);
+
+        // prepare next item for final read operation
+        item = new();
+        item.we = 0;
+        item.re = 1;
+        item.trans_type = READ_WRITE_TEST;
+        $display ("T=%0t [Sequencer] Sending new item to driver mailbox.", $time);
+        drv_mailbox.put(item);
+        @(drive_done);
     endtask
 endclass //generator
 
