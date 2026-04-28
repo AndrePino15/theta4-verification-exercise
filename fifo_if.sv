@@ -1,7 +1,8 @@
-interface fifo_if (input logic clk, n_rst);
+interface fifo_if (input logic clk);
 
 import fifo_pkg::WIDTH;
 
+    logic n_rst;
     logic we;
     logic re;
     logic almost_full;

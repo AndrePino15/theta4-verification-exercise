@@ -3,10 +3,10 @@ module fifo_tb;
 import fifo_pkg::*;
 import tb_pkg::*;
 
-logic clk, n_rst;
+logic clk;
 env env0;
 
-fifo_if vif (.clk(clk), .n_rst(n_rst));
+fifo_if vif (.clk(clk));
 
 fifo #(.WIDTH(WIDTH), 
         .DEPTH(DEPTH), 
@@ -27,9 +27,9 @@ end
 
 initial begin
   // 1) starting by reseting the system
-  n_rst = '0;
+  vif.n_rst = '0;
   repeat (2) @(posedge clk);  // hold for 2 clock cycles to make sure the DUT resets.
-  n_rst = '1;
+  vif.n_rst = '1;
   @(posedge clk);   // waiting another clock cycle to settle the reset
 
   // 2) Start the environment

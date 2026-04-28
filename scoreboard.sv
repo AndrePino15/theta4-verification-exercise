@@ -13,6 +13,7 @@ class scoreboard;
     logic ref_empty;
     // pass/fails count variables for final scoreboard report
     int pass_count, fail_count, tests_passed, tests_failed;
+    fifo_trans item;
 
     covergroup fifo_cg;
         // definition of coverpoints for all variables in the transaction type
@@ -64,13 +65,10 @@ class scoreboard;
         cx_same_cycle_wr:   cross cp_we, cp_re;
     endgroup
 
-    // Create handle for covergroup
-    fifo_cg cg;
-
     function new( mailbox #(fifo_trans) score_mailbox, event monitor_done);
         this.score_mailbox = score_mailbox;
         this.monitor_done = monitor_done;
-        this.cg = new();    // instantiate covergroup in constructor so that we never forget to initalise it
+        fifo_cg = new();    // instantiate covergroup in constructor so that we never forget to initalise it
     endfunction
 
     task run();
@@ -79,7 +77,6 @@ class scoreboard;
     tests_passed = 0;
     tests_failed = 0;
     forever begin
-        fifo_trans item;
         logic [WIDTH-1:0] ref_data;
         // wait for monitor to update mailbox with new results
         score_mailbox.get(item);
@@ -92,7 +89,7 @@ class scoreboard;
         end
 
         // 0)   Sample covergroup after each transaction with the monitor is complete and has new values from the DUT
-        cg.sample();
+        fifo_cg.sample();
 
         // 1)   Update reference FIFO with read and write operations  
         if (item.we && (ref_buffer.size() < DEPTH)) begin

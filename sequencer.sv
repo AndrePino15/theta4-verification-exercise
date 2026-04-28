@@ -60,7 +60,7 @@ class sequencer;
     task reset;
         fifo_trans item;
 
-        $display("T=%0t [Sequencer] Initiating Test 1: Active Low Reset Check", $time);
+        $display("T=%0t [Sequencer] Initiating Test 1: Applying Active Low Reset", $time);
 
         // Test goes on from the DUT settings from the past test, so reset required.
         item = new();

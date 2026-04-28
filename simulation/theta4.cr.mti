@@ -14,11 +14,33 @@ Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 } {3.0 5.0} {}} H:/theta4-verification-exercise/sequencer.sv {0 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/sequencer.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 ** Error: H:/theta4-verification-exercise/sequencer.sv(6): (vlog-2730) Undefined variable: 'fifo_trans'.
-** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(15): near ";": syntax error, unexpected ';', expecting '('.
-** Error: H:/theta4-verification-exercise/sequencer.sv(20): (vlog-2730) Undefined variable: 'item'.
-** Error: H:/theta4-verification-exercise/sequencer.sv(24): (vlog-2730) Undefined variable: 'READ_WRITE_TEST'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(14): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/sequencer.sv(19): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(23): (vlog-2730) Undefined variable: 'READ_WRITE_TEST'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(61): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/sequencer.sv(66): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(67): (vlog-2730) Undefined variable: 'N_RESET_LOW'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(74): (vlog-2730) Undefined variable: 'N_RESET_HIGH'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(83): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/sequencer.sv(87): (vlog-2730) Undefined variable: 'DEPTH'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(88): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(92): (vlog-2730) Undefined variable: 'FULL_READ_WRITE'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(99): (vlog-2730) Undefined variable: 'DEPTH'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(100): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(103): (vlog-2730) Undefined variable: 'FULL_READ_WRITE'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(113): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/sequencer.sv(117): (vlog-2730) Undefined variable: 'DEPTH'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(118): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(122): (vlog-2730) Undefined variable: 'FULL_READ_WRITE'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(129): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(133): (vlog-2730) Undefined variable: 'FULL_READ_WRITE'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(148): (vlog-2730) Undefined variable: 'DEPTH'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(169): (vlog-2730) Undefined variable: 'DEPTH'.
+** Error: (vlog-13069) H:/theta4-verification-exercise/sequencer.sv(192): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/sequencer.sv(195): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/sequencer.sv(199): (vlog-2730) Undefined variable: 'SAME_CYCLE_RW_TEST'.
 
-} {3.0 7.0} {}} H:/theta4-verification-exercise/tb_pkg.sv {1 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/tb_pkg.sv
+} {3.0 29.0} {}} H:/theta4-verification-exercise/tb_pkg.sv {1 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/tb_pkg.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 -- Compiling package tb_pkg
 -- Importing package fifo_pkg
@@ -30,22 +52,25 @@ Top level modules:
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 ** Error: H:/theta4-verification-exercise/driver.sv(7): (vlog-2730) Undefined variable: 'fifo_trans'.
 ** Error: (vlog-13069) H:/theta4-verification-exercise/driver.sv(20): near ";": syntax error, unexpected ';', expecting '('.
+** Error: H:/theta4-verification-exercise/driver.sv(30): (vlog-2730) Undefined variable: 'N_RESET_LOW'.
+** Error: H:/theta4-verification-exercise/driver.sv(32): (vlog-2730) Undefined variable: 'N_RESET_HIGH'.
 
-} {3.0 5.0} {}} H:/theta4-verification-exercise/monitor.sv {0 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/monitor.sv
+} {3.0 7.0} {}} H:/theta4-verification-exercise/monitor.sv {0 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/monitor.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 ** Error: H:/theta4-verification-exercise/monitor.sv(7): (vlog-2730) Undefined variable: 'fifo_trans'.
 ** Error: (vlog-13069) H:/theta4-verification-exercise/monitor.sv(16): near ";": syntax error, unexpected ';', expecting '('.
 ** Error: H:/theta4-verification-exercise/monitor.sv(19): (vlog-2730) Undefined variable: 'item'.
+** Error: H:/theta4-verification-exercise/monitor.sv(31): (vlog-2730) Undefined variable: 'N_RESET_LOW'.
 
-} {3.0 6.0} {}} H:/theta4-verification-exercise/scoreboard.sv {0 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/scoreboard.sv
+} {3.0 7.0} {}} H:/theta4-verification-exercise/scoreboard.sv {0 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/scoreboard.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 ** Error: H:/theta4-verification-exercise/scoreboard.sv(6): (vlog-2730) Undefined variable: 'fifo_trans'.
 ** Error: H:/theta4-verification-exercise/scoreboard.sv(9): (vlog-2730) Undefined variable: 'WIDTH'.
-** Error: (vlog-13069) H:/theta4-verification-exercise/scoreboard.sv(26): near ";": syntax error, unexpected ';', expecting '('.
-** Error: H:/theta4-verification-exercise/scoreboard.sv(29): Illegal declaration after the statement near line '26'.  Declarations must precede statements.  Look for stray semicolons.
-** Error: H:/theta4-verification-exercise/scoreboard.sv(33): (vlog-2730) Undefined variable: 'DEPTH'.
-** Error: H:/theta4-verification-exercise/scoreboard.sv(51): (vlog-2730) Undefined variable: 'ALMOST_EMPTY_TH'.
-** Error: H:/theta4-verification-exercise/scoreboard.sv(52): (vlog-2730) Undefined variable: 'ALMOST_FULL_TH'.
+** Error: H:/theta4-verification-exercise/scoreboard.sv(16): Invalid type 'fifo_trans'. Please check the type of the variable 'item'.
+** Error: H:/theta4-verification-exercise/scoreboard.sv(85): (vlog-2730) Undefined variable: 'N_RESET_LOW'.
+** Error: H:/theta4-verification-exercise/scoreboard.sv(95): (vlog-2730) Undefined variable: 'DEPTH'.
+** Error: H:/theta4-verification-exercise/scoreboard.sv(121): (vlog-2730) Undefined variable: 'ALMOST_EMPTY_TH'.
+** Error: H:/theta4-verification-exercise/scoreboard.sv(122): (vlog-2730) Undefined variable: 'ALMOST_FULL_TH'.
 
 } {3.0 10.0} {}} H:/theta4-verification-exercise/fifo.sv {1 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/fifo.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
@@ -62,6 +87,13 @@ Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
 
 Top level modules:
 	fifo_tb
+
+} {} {}} H:/theta4-verification-exercise/fifo_pkg.sv {1 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/fifo_pkg.sv
+Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+-- Compiling package fifo_pkg
+
+Top level modules:
+	--none--
 
 } {} {}} H:/theta4-verification-exercise/env.sv {0 {vlog -work work -vopt -sv -stats=none H:/theta4-verification-exercise/env.sv
 Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
