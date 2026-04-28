@@ -80,7 +80,7 @@ class scoreboard;
         logic [WIDTH-1:0] ref_data;
         // wait for monitor to update mailbox with new results
         score_mailbox.get(item);
-        item.print_rd("Scoreboard");
+        item.print_sc("Scoreboard");
 
         if (item.trans_type == N_RESET_LOW) begin
             ref_buffer.delete();

@@ -60,7 +60,7 @@ class sequencer;
     task reset;
         fifo_trans item;
 
-        $display("T=%0t [Sequencer] Initiating Test 1: Applying Active Low Reset", $time);
+        $display("T=%0t [Sequencer] Initiating Reset Operation to the DUT.", $time);
 
         // Test goes on from the DUT settings from the past test, so reset required.
         item = new();
@@ -145,7 +145,7 @@ class sequencer;
         @(drive_done);
 
         // Loop of reading one writing another time sequentially to test a full wrap around of the pointers.
-        for (int i = 0; i < DEPTH ; i++) begin
+        for (int i = 0; i < DEPTH+2; i++) begin
             // start read to free up a space and move the pointer
             item = new();
             item.we = 0;

@@ -25,6 +25,11 @@ class fifo_trans;
     endfunction
 
     function 
+    void print_sc(string tag="");
+        $display ("T=%0t [%s] Received mailbox item: we=%d re=%d wrdata=0x%0h rddata=0x%0h", $time, tag, we, re, wrdata, rddata);
+    endfunction
+
+    function 
     void print_vif(string tag="");
         $display ("T=%0t [%s] Interface sampled: we=%d re=%d wrdata=0x%0h rddata=0x%0h", $time, tag, we, re, wrdata, rddata);
     endfunction

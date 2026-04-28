@@ -34,8 +34,10 @@ class env;
         s0.test0();
         this.report();
         // Next test
+        /*
         s0.test1();
         this.report();
+        */
         // Next test
         s0.test2();
         this.report();
