@@ -22,28 +22,28 @@ Z5 OL;O;2020.1;71
 R0
 T_opt1
 R1
-!s110 1777398240
-VSFS]]<]KYFK7jBjm2`WZG0
+!s110 1777400082
+VO:h1]oIeW1eHcJCRc<DTe1
 R2
-=1-0050569d1ea4-69f0f1de-28e-587c
+=1-0050569d1ea4-69f0f911-282-4890
 R3
 R4
 n@_opt1
 R5
+R0
 T_opt2
 R1
-!s110 1777286872
-VBZbcbZGe^8WoU8CM?0oFm2
+!s110 1777466420
+V7QRXXfdWl`dn54Sa<g`3S0
 R2
-=1-0050569d1ea4-69ef3ed8-5d-7d84
-o-quiet -auto_acc_if_foreign -work work +acc
+=1-0050569d63b8-69f1fc32-36e-fc8
+R3
 R4
 n@_opt2
 R5
-R0
 vfifo
 Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z7 !s110 1777398222
+Z7 !s110 1777466405
 !i10b 1
 !s100 BC0Zcm2L182R2UF<18LSR1
 Z8 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -54,13 +54,13 @@ Z10 dH:/theta4-verification-exercise/simulation
 w1777286143
 8H:/theta4-verification-exercise/fifo.sv
 FH:/theta4-verification-exercise/fifo.sv
-!i122 128
+!i122 142
 L0 1 90
 Z11 OL;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1777398222.000000
+!s108 1777466405.000000
 !s107 H:/theta4-verification-exercise/fifo.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-cover|sbce3|-stats=none|H:/theta4-verification-exercise/fifo.sv|
 !i113 0
@@ -70,7 +70,7 @@ R4
 Yfifo_if
 R6
 Z14 DXx4 work 8 fifo_pkg 0 22 `5QmDNnZM6CH;QC?j[e]n0
-Z15 !s110 1777398221
+Z15 !s110 1777466404
 !i10b 1
 !s100 T;gXBf4zLiUI^?z?am>T03
 R8
@@ -81,13 +81,13 @@ R10
 w1777367094
 8H:/theta4-verification-exercise/fifo_if.sv
 FH:/theta4-verification-exercise/fifo_if.sv
-!i122 125
+!i122 139
 Z16 L0 1 0
 R11
 r1
 !s85 0
 31
-!s108 1777398220.000000
+Z17 !s108 1777466404.000000
 !s107 H:/theta4-verification-exercise/fifo_if.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-cover|sbce3|-stats=none|H:/theta4-verification-exercise/fifo_if.sv|
 !i113 0
@@ -96,7 +96,7 @@ R13
 R4
 Xfifo_pkg
 R6
-!s110 1777398220
+R15
 !i10b 1
 !s100 f<<CgSDLG11zd9]LbDBJZ1
 R8
@@ -107,13 +107,13 @@ R10
 w1777326204
 8H:/theta4-verification-exercise/fifo_pkg.sv
 FH:/theta4-verification-exercise/fifo_pkg.sv
-!i122 124
+!i122 138
 R16
 R11
 r1
 !s85 0
 31
-!s108 1777398219.000000
+!s108 1777466403.000000
 !s107 H:/theta4-verification-exercise/fifo_pkg.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-cover|sbce3|-stats=none|H:/theta4-verification-exercise/fifo_pkg.sv|
 !i113 0
@@ -123,7 +123,7 @@ R4
 vfifo_tb
 R6
 R14
-DXx4 work 6 tb_pkg 0 22 a9ShOmjL^ZZofXd8PFh?:0
+DXx4 work 6 tb_pkg 0 22 bAkRK`=CF29GfRS0E2L?K2
 R7
 !i10b 1
 !s100 @;AoXeBPgk3W_CMaM:nk72
@@ -135,13 +135,13 @@ R10
 w1777367179
 8H:/theta4-verification-exercise/fifo_tb.sv
 FH:/theta4-verification-exercise/fifo_tb.sv
-!i122 127
+!i122 141
 L0 1 45
 R11
 r1
 !s85 0
 31
-Z17 !s108 1777398221.000000
+R17
 !s107 H:/theta4-verification-exercise/fifo_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-cover|sbce3|-stats=none|H:/theta4-verification-exercise/fifo_tb.sv|
 !i113 0
@@ -154,13 +154,13 @@ R6
 R14
 R15
 !i10b 1
-!s100 WiM4<GE7a;aNhVi=FM3eG3
+!s100 YYIbDAh=13Gd3K?75Mzdh1
 R8
-Ia9ShOmjL^ZZofXd8PFh?:0
-Va9ShOmjL^ZZofXd8PFh?:0
+IbAkRK`=CF29GfRS0E2L?K2
+VbAkRK`=CF29GfRS0E2L?K2
 S1
 R10
-w1777398144
+w1777400059
 8H:/theta4-verification-exercise/tb_pkg.sv
 FH:/theta4-verification-exercise/tb_pkg.sv
 FH:\theta4-verification-exercise\fifo_trans.sv
@@ -169,7 +169,7 @@ FH:\theta4-verification-exercise\sequencer.sv
 FH:\theta4-verification-exercise\monitor.sv
 FH:\theta4-verification-exercise\scoreboard.sv
 FH:\theta4-verification-exercise\env.sv
-!i122 126
+!i122 140
 R16
 R11
 r1

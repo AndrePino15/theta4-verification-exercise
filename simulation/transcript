@@ -760,3 +760,766 @@ run -all
 # ** Note: $stop    : H:/theta4-verification-exercise/fifo_tb.sv(42)
 #    Time: 1510 ns  Iteration: 1  Instance: /fifo_tb
 # Break in Module fifo_tb at H:/theta4-verification-exercise/fifo_tb.sv line 42
+quit -sim
+# End time: 19:09:36 on Apr 28,2026, Elapsed time: 0:25:39
+# Errors: 0, Warnings: 3
+# Compile of fifo_pkg.sv was successful.
+# Compile of fifo_if.sv was successful.
+# Compile of tb_pkg.sv failed with 1 errors.
+# Compile of fifo_tb.sv was successful.
+# Compile of fifo.sv was successful.
+# 5 compiles, 1 failed with 1 error.
+# Compile of fifo_pkg.sv was successful.
+# Compile of fifo_if.sv was successful.
+# Compile of tb_pkg.sv was successful.
+# Compile of fifo_tb.sv was successful.
+# Compile of fifo.sv was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -coverage work.fifo_tb
+# vsim -coverage work.fifo_tb 
+# Start time: 19:14:40 on Apr 28,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.fifo_if(fast)
+# Loading work.fifo_pkg(fast)
+# Loading work.tb_pkg(fast)
+# Loading work.fifo_tb(fast)
+.cls
+# invalid command name ".cls"
+clear
+# [H[2J[3J
+run -all
+# T=50 [Testbench] Starting the simulation environment...
+# T=50 [Sequencer] Initiating Test 0: Simple Read & Write
+# T=50 [Sequencer] Sending WRITE item to driver mailbox. we=1 re=0 wrdata=0xa rddata=0xx
+# T=50 [Driver] Received mailbox item: we=1 re=0 wrdata=0xa
+# T=70 [Driver] Driver_done flag triggered
+# T=70 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx rddata=0xx
+# T=70 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=75 [Monitor] Interface sampled: we=1 re=0 wrdata=0xa rddata=0xx
+# T=75 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xa rddata=0xx
+# T=75 [Scoreboard] Data written to reference FIFO. ref=0xa
+# T=75 [Scoreboard] Fail... Incorrect empty flag. ref=0, empty=1
+# T=75 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=75 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=75 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=90 [Driver] Driver_done flag triggered
+# T=90 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0xb rddata=0xx
+# T=90 [Driver] Received mailbox item: we=1 re=0 wrdata=0xb
+# T=95 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xx
+# T=95 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xx
+# T=95 [Scoreboard] Fail... Incorrect data read from FIFO. ref=0xa, rddata=0xx
+# T=95 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=95 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=95 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=95 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=110 [Driver] Driver_done flag triggered
+# T=110 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx rddata=0xx
+# T=110 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=115 [Monitor] Interface sampled: we=1 re=0 wrdata=0xb rddata=0xx
+# T=115 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xb rddata=0xx
+# T=115 [Scoreboard] Data written to reference FIFO. ref=0xb
+# T=115 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=115 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=115 [Scoreboard] Fail... Incorrect almost_empty flag. ref=1, almost_empty=0
+# T=115 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=130 [Driver] Driver_done flag triggered
+# T=130 [Sequencer] Sequencer Done.
+# T=135 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xa
+# T=135 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xa
+# T=135 [Scoreboard] Fail... Incorrect data read from FIFO. ref=0xb, rddata=0xa
+# T=135 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=135 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=135 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=135 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=155 [Monitor] Interface sampled: we=0 re=0 wrdata=0xx rddata=0xa
+# T=155 [Scoreboard] Received mailbox item: we=0 re=0 wrdata=0xx rddata=0xa
+# T=155 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=155 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=155 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=155 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# ================================
+# ===== SCOREBOARD REPORT =====
+# PASS: 18  FAIL: 4
+# FAILURES DETECTED
+# ================================
+# T=170 [Env] Previous Test Complete! Applying reset to the DUT and moving on to the next test.
+# T=170 [Sequencer] Initiating Reset Operation to the DUT.
+# T=170 [Sequencer] Sending new item to driver mailbox. n_rst=0, rest undefined
+# T=170 [Driver] Received mailbox item: we=x re=x wrdata=0xx
+# T=175 [Monitor] Interface sampled: we=0 re=0 wrdata=0xx rddata=0xa
+# T=175 [Scoreboard] Received mailbox item: we=0 re=0 wrdata=0xx rddata=0xa
+# T=175 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=175 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=175 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=175 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=190 [Driver] Driver_done flag triggered
+# T=190 [Sequencer] Sending new item to driver mailbox. n_rst=1, rest undefined
+# T=190 [Driver] Received mailbox item: we=x re=x wrdata=0xx
+# T=195 [Monitor] Interface sampled: we=x re=x wrdata=0xx rddata=0xa
+# T=195 [Scoreboard] Received mailbox item: we=x re=x wrdata=0xx rddata=0xa
+# T=195 [Scoreboard] Reset detected, clearing reference buffer
+# T=210 [Driver] Driver_done flag triggered
+# T=210 [Sequencer] Sequencer Done.
+# T=210 [Sequencer] Initiating Test 2: Wrap Around Test
+# T=210 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x0
+# T=210 [Driver] Received mailbox item: we=1 re=0 wrdata=0x0
+# T=215 [Monitor] Interface sampled: we=x re=x wrdata=0xx rddata=0xa
+# T=215 [Scoreboard] Received mailbox item: we=x re=x wrdata=0xx rddata=0xa
+# T=215 [Scoreboard] Fail... Incorrect empty flag. ref=1, empty=0
+# T=215 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=215 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=215 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=230 [Driver] Driver_done flag triggered
+# T=230 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x1
+# T=230 [Driver] Received mailbox item: we=1 re=0 wrdata=0x1
+# T=235 [Monitor] Interface sampled: we=1 re=0 wrdata=0x0 rddata=0xa
+# T=235 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x0 rddata=0xa
+# T=235 [Scoreboard] Data written to reference FIFO. ref=0x0
+# T=235 [Scoreboard] Fail... Incorrect empty flag. ref=0, empty=1
+# T=235 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=235 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=235 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=250 [Driver] Driver_done flag triggered
+# T=250 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x2
+# T=250 [Driver] Received mailbox item: we=1 re=0 wrdata=0x2
+# T=255 [Monitor] Interface sampled: we=1 re=0 wrdata=0x1 rddata=0xa
+# T=255 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x1 rddata=0xa
+# T=255 [Scoreboard] Data written to reference FIFO. ref=0x1
+# T=255 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=255 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=255 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=255 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=270 [Driver] Driver_done flag triggered
+# T=270 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x3
+# T=270 [Driver] Received mailbox item: we=1 re=0 wrdata=0x3
+# T=275 [Monitor] Interface sampled: we=1 re=0 wrdata=0x2 rddata=0xa
+# T=275 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x2 rddata=0xa
+# T=275 [Scoreboard] Data written to reference FIFO. ref=0x2
+# T=275 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=275 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=275 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=275 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=290 [Driver] Driver_done flag triggered
+# T=290 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x4
+# T=290 [Driver] Received mailbox item: we=1 re=0 wrdata=0x4
+# T=295 [Monitor] Interface sampled: we=1 re=0 wrdata=0x3 rddata=0xa
+# T=295 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x3 rddata=0xa
+# T=295 [Scoreboard] Data written to reference FIFO. ref=0x3
+# T=295 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=295 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=295 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=295 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=310 [Driver] Driver_done flag triggered
+# T=310 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x5
+# T=310 [Driver] Received mailbox item: we=1 re=0 wrdata=0x5
+# T=315 [Monitor] Interface sampled: we=1 re=0 wrdata=0x4 rddata=0xa
+# T=315 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x4 rddata=0xa
+# T=315 [Scoreboard] Data written to reference FIFO. ref=0x4
+# T=315 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=315 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=315 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=315 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=330 [Driver] Driver_done flag triggered
+# T=330 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x6
+# T=330 [Driver] Received mailbox item: we=1 re=0 wrdata=0x6
+# T=335 [Monitor] Interface sampled: we=1 re=0 wrdata=0x5 rddata=0xa
+# T=335 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x5 rddata=0xa
+# T=335 [Scoreboard] Data written to reference FIFO. ref=0x5
+# T=335 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=335 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=335 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=335 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=350 [Driver] Driver_done flag triggered
+# T=350 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x7
+# T=350 [Driver] Received mailbox item: we=1 re=0 wrdata=0x7
+# T=355 [Monitor] Interface sampled: we=1 re=0 wrdata=0x6 rddata=0xa
+# T=355 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x6 rddata=0xa
+# T=355 [Scoreboard] Data written to reference FIFO. ref=0x6
+# T=355 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=355 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=355 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=355 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=370 [Driver] Driver_done flag triggered
+# T=370 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x8
+# T=370 [Driver] Received mailbox item: we=1 re=0 wrdata=0x8
+# T=375 [Monitor] Interface sampled: we=1 re=0 wrdata=0x7 rddata=0xa
+# T=375 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x7 rddata=0xa
+# T=375 [Scoreboard] Data written to reference FIFO. ref=0x7
+# T=375 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=375 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=375 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=375 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=390 [Driver] Driver_done flag triggered
+# T=390 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x9
+# T=390 [Driver] Received mailbox item: we=1 re=0 wrdata=0x9
+# T=395 [Monitor] Interface sampled: we=1 re=0 wrdata=0x8 rddata=0xa
+# T=395 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x8 rddata=0xa
+# T=395 [Scoreboard] Data written to reference FIFO. ref=0x8
+# T=395 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=395 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=395 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=395 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=410 [Driver] Driver_done flag triggered
+# T=410 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0xa
+# T=410 [Driver] Received mailbox item: we=1 re=0 wrdata=0xa
+# T=415 [Monitor] Interface sampled: we=1 re=0 wrdata=0x9 rddata=0xa
+# T=415 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x9 rddata=0xa
+# T=415 [Scoreboard] Data written to reference FIFO. ref=0x9
+# T=415 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=415 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=415 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=415 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=430 [Driver] Driver_done flag triggered
+# T=430 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0xb
+# T=430 [Driver] Received mailbox item: we=1 re=0 wrdata=0xb
+# T=435 [Monitor] Interface sampled: we=1 re=0 wrdata=0xa rddata=0xa
+# T=435 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xa rddata=0xa
+# T=435 [Scoreboard] Data written to reference FIFO. ref=0xa
+# T=435 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=435 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=435 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=435 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=450 [Driver] Driver_done flag triggered
+# T=450 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x5
+# T=450 [Driver] Received mailbox item: we=1 re=0 wrdata=0x5
+# T=455 [Monitor] Interface sampled: we=1 re=0 wrdata=0xb rddata=0xa
+# T=455 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xb rddata=0xa
+# T=455 [Scoreboard] Data written to reference FIFO. ref=0xb
+# T=455 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=455 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=455 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=455 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=470 [Driver] Driver_done flag triggered
+# T=470 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x6
+# T=470 [Driver] Received mailbox item: we=1 re=0 wrdata=0x6
+# T=475 [Monitor] Interface sampled: we=1 re=0 wrdata=0x5 rddata=0xa
+# T=475 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x5 rddata=0xa
+# T=475 [Scoreboard] Ref FIFO is full, can't hold more data.
+# T=475 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=475 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=475 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=475 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=490 [Driver] Driver_done flag triggered
+# T=490 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=490 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=495 [Monitor] Interface sampled: we=1 re=0 wrdata=0x6 rddata=0xa
+# T=495 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x6 rddata=0xa
+# T=495 [Scoreboard] Ref FIFO is full, can't hold more data.
+# T=495 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=495 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=495 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=495 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=510 [Driver] Driver_done flag triggered
+# T=510 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x0
+# T=510 [Driver] Received mailbox item: we=1 re=0 wrdata=0x0
+# T=515 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x0
+# T=515 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x0
+# T=515 [Scoreboard] Pass! Data read correclty. ref=0x0, rddata=0x0
+# T=515 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=515 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=515 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=515 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=530 [Driver] Driver_done flag triggered
+# T=530 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=530 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=535 [Monitor] Interface sampled: we=1 re=0 wrdata=0x0 rddata=0x0
+# T=535 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x0 rddata=0x0
+# T=535 [Scoreboard] Data written to reference FIFO. ref=0x0
+# T=535 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=535 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=535 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=535 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=550 [Driver] Driver_done flag triggered
+# T=550 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x1
+# T=550 [Driver] Received mailbox item: we=1 re=0 wrdata=0x1
+# T=555 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x1
+# T=555 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x1
+# T=555 [Scoreboard] Pass! Data read correclty. ref=0x1, rddata=0x1
+# T=555 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=555 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=555 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=555 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=570 [Driver] Driver_done flag triggered
+# T=570 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=570 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=575 [Monitor] Interface sampled: we=1 re=0 wrdata=0x1 rddata=0x1
+# T=575 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x1 rddata=0x1
+# T=575 [Scoreboard] Data written to reference FIFO. ref=0x1
+# T=575 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=575 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=575 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=575 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=590 [Driver] Driver_done flag triggered
+# T=590 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x2
+# T=590 [Driver] Received mailbox item: we=1 re=0 wrdata=0x2
+# T=595 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x2
+# T=595 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x2
+# T=595 [Scoreboard] Pass! Data read correclty. ref=0x2, rddata=0x2
+# T=595 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=595 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=595 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=595 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=610 [Driver] Driver_done flag triggered
+# T=610 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=610 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=615 [Monitor] Interface sampled: we=1 re=0 wrdata=0x2 rddata=0x2
+# T=615 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x2 rddata=0x2
+# T=615 [Scoreboard] Data written to reference FIFO. ref=0x2
+# T=615 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=615 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=615 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=615 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=630 [Driver] Driver_done flag triggered
+# T=630 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x3
+# T=630 [Driver] Received mailbox item: we=1 re=0 wrdata=0x3
+# T=635 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x3
+# T=635 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x3
+# T=635 [Scoreboard] Pass! Data read correclty. ref=0x3, rddata=0x3
+# T=635 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=635 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=635 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=635 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=650 [Driver] Driver_done flag triggered
+# T=650 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=650 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=655 [Monitor] Interface sampled: we=1 re=0 wrdata=0x3 rddata=0x3
+# T=655 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x3 rddata=0x3
+# T=655 [Scoreboard] Data written to reference FIFO. ref=0x3
+# T=655 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=655 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=655 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=655 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=670 [Driver] Driver_done flag triggered
+# T=670 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x4
+# T=670 [Driver] Received mailbox item: we=1 re=0 wrdata=0x4
+# T=675 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x4
+# T=675 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x4
+# T=675 [Scoreboard] Pass! Data read correclty. ref=0x4, rddata=0x4
+# T=675 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=675 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=675 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=675 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=690 [Driver] Driver_done flag triggered
+# T=690 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=690 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=695 [Monitor] Interface sampled: we=1 re=0 wrdata=0x4 rddata=0x4
+# T=695 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x4 rddata=0x4
+# T=695 [Scoreboard] Data written to reference FIFO. ref=0x4
+# T=695 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=695 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=695 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=695 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=710 [Driver] Driver_done flag triggered
+# T=710 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x5
+# T=710 [Driver] Received mailbox item: we=1 re=0 wrdata=0x5
+# T=715 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x5
+# T=715 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x5
+# T=715 [Scoreboard] Pass! Data read correclty. ref=0x5, rddata=0x5
+# T=715 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=715 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=715 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=715 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=730 [Driver] Driver_done flag triggered
+# T=730 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=730 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=735 [Monitor] Interface sampled: we=1 re=0 wrdata=0x5 rddata=0x5
+# T=735 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x5 rddata=0x5
+# T=735 [Scoreboard] Data written to reference FIFO. ref=0x5
+# T=735 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=735 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=735 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=735 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=750 [Driver] Driver_done flag triggered
+# T=750 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x6
+# T=750 [Driver] Received mailbox item: we=1 re=0 wrdata=0x6
+# T=755 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x6
+# T=755 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x6
+# T=755 [Scoreboard] Pass! Data read correclty. ref=0x6, rddata=0x6
+# T=755 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=755 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=755 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=755 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=770 [Driver] Driver_done flag triggered
+# T=770 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=770 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=775 [Monitor] Interface sampled: we=1 re=0 wrdata=0x6 rddata=0x6
+# T=775 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x6 rddata=0x6
+# T=775 [Scoreboard] Data written to reference FIFO. ref=0x6
+# T=775 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=775 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=775 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=775 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=790 [Driver] Driver_done flag triggered
+# T=790 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x7
+# T=790 [Driver] Received mailbox item: we=1 re=0 wrdata=0x7
+# T=795 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x7
+# T=795 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x7
+# T=795 [Scoreboard] Pass! Data read correclty. ref=0x7, rddata=0x7
+# T=795 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=795 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=795 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=795 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=810 [Driver] Driver_done flag triggered
+# T=810 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=810 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=815 [Monitor] Interface sampled: we=1 re=0 wrdata=0x7 rddata=0x7
+# T=815 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x7 rddata=0x7
+# T=815 [Scoreboard] Data written to reference FIFO. ref=0x7
+# T=815 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=815 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=815 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=815 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=830 [Driver] Driver_done flag triggered
+# T=830 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x8
+# T=830 [Driver] Received mailbox item: we=1 re=0 wrdata=0x8
+# T=835 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x8
+# T=835 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x8
+# T=835 [Scoreboard] Pass! Data read correclty. ref=0x8, rddata=0x8
+# T=835 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=835 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=835 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=835 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=850 [Driver] Driver_done flag triggered
+# T=850 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=850 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=855 [Monitor] Interface sampled: we=1 re=0 wrdata=0x8 rddata=0x8
+# T=855 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x8 rddata=0x8
+# T=855 [Scoreboard] Data written to reference FIFO. ref=0x8
+# T=855 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=855 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=855 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=855 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=870 [Driver] Driver_done flag triggered
+# T=870 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x9
+# T=870 [Driver] Received mailbox item: we=1 re=0 wrdata=0x9
+# T=875 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x9
+# T=875 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x9
+# T=875 [Scoreboard] Pass! Data read correclty. ref=0x9, rddata=0x9
+# T=875 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=875 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=875 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=875 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=890 [Driver] Driver_done flag triggered
+# T=890 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=890 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=895 [Monitor] Interface sampled: we=1 re=0 wrdata=0x9 rddata=0x9
+# T=895 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x9 rddata=0x9
+# T=895 [Scoreboard] Data written to reference FIFO. ref=0x9
+# T=895 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=895 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=895 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=895 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=910 [Driver] Driver_done flag triggered
+# T=910 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0xa
+# T=910 [Driver] Received mailbox item: we=1 re=0 wrdata=0xa
+# T=915 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xa
+# T=915 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xa
+# T=915 [Scoreboard] Pass! Data read correclty. ref=0xa, rddata=0xa
+# T=915 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=915 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=915 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=915 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=930 [Driver] Driver_done flag triggered
+# T=930 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=930 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=935 [Monitor] Interface sampled: we=1 re=0 wrdata=0xa rddata=0xa
+# T=935 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xa rddata=0xa
+# T=935 [Scoreboard] Data written to reference FIFO. ref=0xa
+# T=935 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=935 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=935 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=935 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=950 [Driver] Driver_done flag triggered
+# T=950 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0xb
+# T=950 [Driver] Received mailbox item: we=1 re=0 wrdata=0xb
+# T=955 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xb
+# T=955 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xb
+# T=955 [Scoreboard] Pass! Data read correclty. ref=0xb, rddata=0xb
+# T=955 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=955 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=955 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=955 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=970 [Driver] Driver_done flag triggered
+# T=970 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=970 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=975 [Monitor] Interface sampled: we=1 re=0 wrdata=0xb rddata=0xb
+# T=975 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xb rddata=0xb
+# T=975 [Scoreboard] Data written to reference FIFO. ref=0xb
+# T=975 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=975 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=975 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=975 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=990 [Driver] Driver_done flag triggered
+# T=990 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0xc
+# T=990 [Driver] Received mailbox item: we=1 re=0 wrdata=0xc
+# T=995 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x0
+# T=995 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x0
+# T=995 [Scoreboard] Pass! Data read correclty. ref=0x0, rddata=0x0
+# T=995 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=995 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=995 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=995 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=1010 [Driver] Driver_done flag triggered
+# T=1010 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1010 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1015 [Monitor] Interface sampled: we=1 re=0 wrdata=0xc rddata=0x0
+# T=1015 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xc rddata=0x0
+# T=1015 [Scoreboard] Data written to reference FIFO. ref=0xc
+# T=1015 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1015 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=1015 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1015 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=1030 [Driver] Driver_done flag triggered
+# T=1030 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0xd
+# T=1030 [Driver] Received mailbox item: we=1 re=0 wrdata=0xd
+# T=1035 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x1
+# T=1035 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x1
+# T=1035 [Scoreboard] Pass! Data read correclty. ref=0x1, rddata=0x1
+# T=1035 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1035 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1035 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1035 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=1050 [Driver] Driver_done flag triggered
+# T=1050 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1050 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1055 [Monitor] Interface sampled: we=1 re=0 wrdata=0xd rddata=0x1
+# T=1055 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0xd rddata=0x1
+# T=1055 [Scoreboard] Data written to reference FIFO. ref=0xd
+# T=1055 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1055 [Scoreboard] Pass! Correct full flag in DUT. ref=1, full=1
+# T=1055 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1055 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=1070 [Driver] Driver_done flag triggered
+# T=1070 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1070 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1075 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x2
+# T=1075 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x2
+# T=1075 [Scoreboard] Pass! Data read correclty. ref=0x2, rddata=0x2
+# T=1075 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1075 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1075 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1075 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=1, almost_full=1
+# T=1090 [Driver] Driver_done flag triggered
+# T=1090 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1090 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1095 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x3
+# T=1095 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x3
+# T=1095 [Scoreboard] Pass! Data read correclty. ref=0x3, rddata=0x3
+# T=1095 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1095 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1095 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1095 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1110 [Driver] Driver_done flag triggered
+# T=1110 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1110 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1115 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x4
+# T=1115 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x4
+# T=1115 [Scoreboard] Pass! Data read correclty. ref=0x4, rddata=0x4
+# T=1115 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1115 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1115 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1115 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1130 [Driver] Driver_done flag triggered
+# T=1130 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1130 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1135 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x5
+# T=1135 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x5
+# T=1135 [Scoreboard] Pass! Data read correclty. ref=0x5, rddata=0x5
+# T=1135 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1135 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1135 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1135 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1150 [Driver] Driver_done flag triggered
+# T=1150 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1150 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1155 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x6
+# T=1155 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x6
+# T=1155 [Scoreboard] Pass! Data read correclty. ref=0x6, rddata=0x6
+# T=1155 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1155 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1155 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1155 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1170 [Driver] Driver_done flag triggered
+# T=1170 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1170 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1175 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x7
+# T=1175 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x7
+# T=1175 [Scoreboard] Pass! Data read correclty. ref=0x7, rddata=0x7
+# T=1175 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1175 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1175 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1175 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1190 [Driver] Driver_done flag triggered
+# T=1190 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1190 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1195 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x8
+# T=1195 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x8
+# T=1195 [Scoreboard] Pass! Data read correclty. ref=0x8, rddata=0x8
+# T=1195 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1195 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1195 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1195 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1210 [Driver] Driver_done flag triggered
+# T=1210 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1210 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1215 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x9
+# T=1215 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x9
+# T=1215 [Scoreboard] Pass! Data read correclty. ref=0x9, rddata=0x9
+# T=1215 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1215 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1215 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1215 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1230 [Driver] Driver_done flag triggered
+# T=1230 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1230 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1235 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xa
+# T=1235 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xa
+# T=1235 [Scoreboard] Pass! Data read correclty. ref=0xa, rddata=0xa
+# T=1235 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1235 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1235 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1235 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1250 [Driver] Driver_done flag triggered
+# T=1250 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1250 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1255 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xb
+# T=1255 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xb
+# T=1255 [Scoreboard] Pass! Data read correclty. ref=0xb, rddata=0xb
+# T=1255 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1255 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1255 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=0, almost_empty=0
+# T=1255 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1270 [Driver] Driver_done flag triggered
+# T=1270 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1270 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1275 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xc
+# T=1275 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xc
+# T=1275 [Scoreboard] Pass! Data read correclty. ref=0xc, rddata=0xc
+# T=1275 [Scoreboard] Fail... Incorrect empty flag. ref=0, empty=1
+# T=1275 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1275 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=1275 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1290 [Driver] Driver_done flag triggered
+# T=1290 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1290 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1295 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xc
+# T=1295 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xc
+# T=1295 [Scoreboard] Fail... Incorrect data read from FIFO. ref=0xd, rddata=0xc
+# T=1295 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=1295 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1295 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=1295 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1310 [Driver] Driver_done flag triggered
+# T=1310 [Sequencer] Sequencer Done
+# T=1315 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0xc
+# T=1315 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0xc
+# T=1315 [Scoreboard] Read attempted when FIFO is empty: rddata=0xc (undefined behaviour, value doesn't matter)
+# T=1315 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=1315 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1315 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=1315 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1335 [Monitor] Interface sampled: we=0 re=0 wrdata=0xx rddata=0xc
+# T=1335 [Scoreboard] Received mailbox item: we=0 re=0 wrdata=0xx rddata=0xc
+# T=1335 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=1335 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1335 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=1335 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# ================================
+# ===== SCOREBOARD REPORT =====
+# PASS: 254  FAIL: 4
+# FAILURES DETECTED
+# ================================
+# T=1350 [Env] Previous Test Complete! Applying reset to the DUT and moving on to the next test.
+# T=1350 [Sequencer] Initiating Reset Operation to the DUT.
+# T=1350 [Sequencer] Sending new item to driver mailbox. n_rst=0, rest undefined
+# T=1350 [Driver] Received mailbox item: we=x re=x wrdata=0xx
+# T=1355 [Monitor] Interface sampled: we=0 re=0 wrdata=0xx rddata=0xc
+# T=1355 [Scoreboard] Received mailbox item: we=0 re=0 wrdata=0xx rddata=0xc
+# T=1355 [Scoreboard] Pass! Correct empty flag in DUT. ref=1, empty=1
+# T=1355 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1355 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=1355 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1370 [Driver] Driver_done flag triggered
+# T=1370 [Sequencer] Sending new item to driver mailbox. n_rst=1, rest undefined
+# T=1370 [Driver] Received mailbox item: we=x re=x wrdata=0xx
+# T=1375 [Monitor] Interface sampled: we=x re=x wrdata=0xx rddata=0xc
+# T=1375 [Scoreboard] Received mailbox item: we=x re=x wrdata=0xx rddata=0xc
+# T=1375 [Scoreboard] Reset detected, clearing reference buffer
+# T=1390 [Driver] Driver_done flag triggered
+# T=1390 [Sequencer] Sequencer Done.
+# T=1390 [Sequencer] Initiating Test 3: Same Cycle Read & Write
+# T=1390 [Sequencer] Sending new item to driver mailbox. we=1 re=0 wrdata=0x5
+# T=1390 [Driver] Received mailbox item: we=1 re=0 wrdata=0x5
+# T=1395 [Monitor] Interface sampled: we=x re=x wrdata=0xx rddata=0xc
+# T=1395 [Scoreboard] Received mailbox item: we=x re=x wrdata=0xx rddata=0xc
+# T=1395 [Scoreboard] Fail... Incorrect empty flag. ref=1, empty=0
+# T=1395 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1395 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=1395 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1410 [Driver] Driver_done flag triggered
+# T=1410 [Sequencer] Sending new item to driver mailbox. we=1 re=1 wrdata=0x6
+# T=1410 [Driver] Received mailbox item: we=1 re=1 wrdata=0x6
+# T=1415 [Monitor] Interface sampled: we=1 re=0 wrdata=0x5 rddata=0xc
+# T=1415 [Scoreboard] Received mailbox item: we=1 re=0 wrdata=0x5 rddata=0xc
+# T=1415 [Scoreboard] Data written to reference FIFO. ref=0x5
+# T=1415 [Scoreboard] Fail... Incorrect empty flag. ref=0, empty=1
+# T=1415 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1415 [Scoreboard] Pass! Correct almost_empty flag in DUT. ref=1, almost_empty=1
+# T=1415 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1430 [Driver] Driver_done flag triggered
+# T=1430 [Sequencer] Sending new item to driver mailbox. we=1 re=1 wrdata=0x7
+# T=1430 [Driver] Received mailbox item: we=1 re=1 wrdata=0x7
+# T=1435 [Monitor] Interface sampled: we=1 re=1 wrdata=0x6 rddata=0xc
+# T=1435 [Scoreboard] Received mailbox item: we=1 re=1 wrdata=0x6 rddata=0xc
+# T=1435 [Scoreboard] Data written to reference FIFO. ref=0x6
+# T=1435 [Scoreboard] Fail... Incorrect data read from FIFO. ref=0x5, rddata=0xc
+# T=1435 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1435 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1435 [Scoreboard] Fail... Incorrect almost_empty flag. ref=1, almost_empty=0
+# T=1435 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1450 [Driver] Driver_done flag triggered
+# T=1450 [Sequencer] Sending new item to driver mailbox. we=0 re=1 wrdata=0xx
+# T=1450 [Driver] Received mailbox item: we=0 re=1 wrdata=0xx
+# T=1455 [Monitor] Interface sampled: we=1 re=1 wrdata=0x7 rddata=0x5
+# T=1455 [Scoreboard] Received mailbox item: we=1 re=1 wrdata=0x7 rddata=0x5
+# T=1455 [Scoreboard] Data written to reference FIFO. ref=0x7
+# T=1455 [Scoreboard] Fail... Incorrect data read from FIFO. ref=0x6, rddata=0x5
+# T=1455 [Scoreboard] Pass! Correct empty flag in DUT. ref=0, empty=0
+# T=1455 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1455 [Scoreboard] Fail... Incorrect almost_empty flag. ref=1, almost_empty=0
+# T=1455 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1470 [Driver] Driver_done flag triggered
+# T=1470 [Sequencer] Sequencer Done.
+# T=1475 [Monitor] Interface sampled: we=0 re=1 wrdata=0xx rddata=0x6
+# T=1475 [Scoreboard] Received mailbox item: we=0 re=1 wrdata=0xx rddata=0x6
+# T=1475 [Scoreboard] Fail... Incorrect data read from FIFO. ref=0x7, rddata=0x6
+# T=1475 [Scoreboard] Fail... Incorrect empty flag. ref=1, empty=0
+# T=1475 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1475 [Scoreboard] Fail... Incorrect almost_empty flag. ref=1, almost_empty=0
+# T=1475 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# T=1495 [Monitor] Interface sampled: we=0 re=0 wrdata=0xx rddata=0x6
+# T=1495 [Scoreboard] Received mailbox item: we=0 re=0 wrdata=0xx rddata=0x6
+# T=1495 [Scoreboard] Fail... Incorrect empty flag. ref=1, empty=0
+# T=1495 [Scoreboard] Pass! Correct full flag in DUT. ref=0, full=0
+# T=1495 [Scoreboard] Fail... Incorrect almost_empty flag. ref=1, almost_empty=0
+# T=1495 [Scoreboard] Pass! Correct almost_full flag in DUT. ref=0, almost_full=0
+# ================================
+# ===== SCOREBOARD REPORT =====
+# PASS: 20  FAIL: 11
+# FAILURES DETECTED
+# ================================
+# ===================================
+# ===== SCOREBOARD FINAL REPORT =====
+# TOTAL TESTS PASSED: 0
+# TOTAL TESTS FAILED: 3
+# FAILURES DETECTED
+# The DUT design contains errors that
+# need to be fixed for correct behaviour.
+# ========= COVERAGE REPORT =========
+# Coverage: 98.08%
+# ===================================
+# T=1510 Simulation finished.
+# ** Note: $stop    : H:/theta4-verification-exercise/fifo_tb.sv(42)
+#    Time: 1510 ns  Iteration: 1  Instance: /fifo_tb
+# Break in Module fifo_tb at H:/theta4-verification-exercise/fifo_tb.sv line 42

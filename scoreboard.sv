@@ -191,8 +191,11 @@ class scoreboard;
         end
         else begin
             $display("FAILURES DETECTED");
-            $display("The DUT design contains errors that need fixing for correct behaviour.");
+            $display("The DUT design contains errors that");
+            $display("need to be fixed for correct behaviour.");
         end
+        $display("========= COVERAGE REPORT =========");
+        $display("Coverage: %0.2f%%", fifo_cg.get_coverage());
         $display("===================================");
         
     endtask
